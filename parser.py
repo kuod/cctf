@@ -16,9 +16,18 @@ with open(inputFile[1], "rU") as csvfile:
 		print("name initialized")
 		rowcount = 2
 	else:
+                """
+                if(rowcount == 2):
+                    rowHeader = header + "|" + row[1] + "|" + row[2] + "|" + name
+                    output.write(rowHeader + '\n')
+                    output.write('\n'.join(textwrap.wrap(row[0], 80)))
+                    rowcount += rowcount + 1
+                """
                 if (len(row[0]) != 0):
                     rowHeader = header + "|" + row[1] + "|" + row[2] + "|" + name
-                    print rowHeader
-                    print ('\n'.join(textwrap.wrap(row[0], 80)))
-
+                    output.write(rowHeader + '\n')
+                    output.write('\n'.join(textwrap.wrap(row[0], 80)) + '\n')
+                    rowcount += rowcount + 1
+    print(rowcount.real)
+    output.close()
 csvfile.close()
