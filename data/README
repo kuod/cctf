@@ -1,0 +1,8 @@
+Macro is in all of the .XLSM files
+
+Run the macro to generate the CSV files 
+
+This command executes the python script
+
+for item in $(ls data/*.csv); do python parser.py $item; done 
+
